@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:thiran_test/screen/dash_board/view/dasboard.dart';
 import 'package:thiran_test/screen/project/view/widget/project_card.dart';
 
 class All extends StatelessWidget {
@@ -19,10 +20,12 @@ class All extends StatelessWidget {
                 itemCount: 5,
                 itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                      child: ProjectCard(
-                        tex: texList[index],
-                        percent:percentValue[index] ,
-                        cle: colorList[index],
+                      child: GestureDetector(onTap: () => Get.to(DashBoard(cle:colorList[index] ,percent:percentValue[index] ,)),
+                        child: ProjectCard(
+                          tex: texList[index],
+                          percent:percentValue[index] ,
+                          cle: colorList[index],
+                        ),
                       ),
                     )))
       ]),

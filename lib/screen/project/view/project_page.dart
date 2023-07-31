@@ -134,6 +134,7 @@ floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton( onPressed: () {
+                        Get.back();
                         control.navbarChang(0);
                       },icon: Icon(IconlyBold.home,color: control.navIndex==0?Color.fromARGB(255, 154, 159, 254):Color.fromARGB(255, 147, 147, 147))),
                       IconButton( onPressed: () {
