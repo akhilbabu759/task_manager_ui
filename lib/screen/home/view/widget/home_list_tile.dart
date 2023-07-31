@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeListTile extends StatelessWidget {
-  const HomeListTile({required this.icons,required this.cle,required this.progresVlue,
+  const HomeListTile({required this.icons,required this.cle,required this.progresVlue,required this.tex,
     super.key,
   });
 final Icon icons;
 final Color cle;
 final double progresVlue;
+final String tex;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +33,7 @@ final double progresVlue;
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('App Animation'),
+                  Text(tex),
                   Container(
                     height: 10,
                     width: Get.width * 0.4,

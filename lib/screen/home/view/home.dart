@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thiran_test/const/colors/colors.dart';
 import 'package:thiran_test/screen/home/controller/home_controller.dart';
+import 'package:thiran_test/screen/project/view/project_page.dart';
 
 import 'widget/home_container.dart';
 import 'widget/home_list_tile.dart';
@@ -30,6 +31,7 @@ class Home extends StatelessWidget {
       Color.fromARGB(255, 255, 118, 72),
       Color.fromARGB(255, 146, 152, 255)
     ];
+    List<String>texListTile=['App Animation','DashBoard Design','Ui/UX Design','test','Backend'];
     final control = Get.put(HomeController());
     List<double> pgValue = [0.8, 1, 0.4, 0.6, 0.2];
     //  control. startProgressAnimation();
@@ -169,7 +171,7 @@ class Home extends StatelessWidget {
                       itemCount: 5,
                       itemBuilder: (context, index) => Padding(
                             padding: const EdgeInsets.only(top: 13.0),
-                            child: HomeListTile(
+                            child: HomeListTile(tex:texListTile[index],
                               cle: cleLsit[index],
                               icons: iconlist[index],
                               progresVlue: pgValue[index],
@@ -198,6 +200,7 @@ class Home extends StatelessWidget {
                         control.navbarChang(0);
                       },icon: Icon(IconlyBold.home,color: control.navIndex==0?Color.fromARGB(255, 154, 159, 254):Color.fromARGB(255, 147, 147, 147))),
                       IconButton( onPressed: () {
+                        Get.to(ProjectPage());
                         control.navbarChang(1);
                       },icon: Icon(IconlyBold.paper,color: control.navIndex==1?Color.fromARGB(255, 154, 159, 254):Color.fromARGB(255, 147, 147, 147))),Text(''),
                       IconButton( onPressed: () {
